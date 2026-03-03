@@ -1,4 +1,5 @@
 #include "functions.h"
+#include <stdio.h>
 void f2() {
-    // TODO
+    printf("This is ghw coding!\n");
 }
