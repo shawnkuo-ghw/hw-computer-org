@@ -1,4 +1,5 @@
 #include "functions.h"
+#include <stdio.h>
 void f1() {
-    // TODO
+    printf("i am dzy\n");
 }
