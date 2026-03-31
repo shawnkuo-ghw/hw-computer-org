@@ -1,3 +1,11 @@
+/**
+ * @file   standard.h
+ * @date   03-31-2026
+ * @brief  This header file contains the prototypes of all the functions
+ *         related to math, string and boolean, the declarations of some
+ *         variable types and 
+ */
+
 #ifndef STANDARD_DEF
 #define STANDARD_DEF
 #include <limits.h> //You can get min and max values for int from here
@@ -27,7 +35,9 @@ typedef char * string;
 */
 #define FALSE 0
 
-// Math
+/* ============================== Math ====================================== */
+
+#define MIN_VALUE INT_MIN /* INT_MIN is the minimal value for int */
 
 /*
     Returns the minimum of two values
@@ -40,7 +50,7 @@ extern int min(const int a, const int b);
     Returns the minimum value in an array
     Takes an integer `size` and an `array` of that size
     Returns `e`, where `e` is in `array` and there is no other value `f` in `array` such that `f < e`;
-    if `array` is empty, it will return `MAX_VALUE`.
+    if `array` is empty, it will return `MIN_VALUE`.
 */
 extern int minimum(const int size, int values[size]);
 
@@ -73,7 +83,7 @@ extern boolean is_prime(const natural value);
 */
 extern natural fibonacci(const natural nth);
 
-// String
+/* ================================= String ================================= */
 
 /*
     Returns the length of a `NULL-Terminated` string
@@ -145,7 +155,7 @@ extern int find(const string const str, const string const target);
 */
 extern string replace_first(const string const original, const string const target, const string const replacement);
 
-// Boolean
+/* ================================ Boolean ================================= */
 
 /*
     Returns the logical and between two boolean values
@@ -174,6 +184,13 @@ extern boolean or(const boolean a, const boolean b);
     Returns `a ^ b`
 */
 extern boolean xor(const boolean a, const boolean b);
+
+/*
+    Returns the logical implies between two boolean values
+    Takes two `boolean` values `a` and `b`
+    Returns `!a || b`
+ */
+extern boolean implies(const boolean a, const boolean b);
 
 /*
     Defines a boolean expression that can be evaluated into a single `boolean` value
@@ -207,6 +224,13 @@ extern struct expression* AND(struct expression* left, struct expression* right)
     Returns a pointer to a new `expression` representing a disjunction of `left` and `right`
 */
 extern struct expression* OR(struct expression* left, struct expression* right);
+
+/*
+    Creates an `expression` representing an implication of two other `expression`s.
+    Takes two pointers to `expression`s `left` and `right`
+    Returns a pointer to a new `expression` representing an implication from `left` to `right`
+*/
+extern struct expression* IMPLIES(struct expression* left, struct expression* right);
 
 /*
     Evaluates an `expression` into a `boolean` value
