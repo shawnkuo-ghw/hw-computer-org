@@ -8,6 +8,9 @@
 void print_array(const int size, const int values[size]);
 
 void main(int argc, char ** argv) {
+
+    /* ========================= math methods =============================== */
+
     printf("max(1,2): %d\n", max(1,2));
     printf("max(2,1): %d\n", max(2,1));
     printf("max(-1, 1): %d\n", max(-1, 1));
@@ -35,6 +38,9 @@ void main(int argc, char ** argv) {
     for (int ith = 1; ith < 20; ith++) {
         printf("%dth fibonacci: %d\n", ith, fibonnaci(ith));
     }
+
+    /* ========================= string methods ============================= */
+
     const char * hello_there = "Hello there! - General Kenobi!";
     const char * hello = "Hello!";
     const char * hello_ = "Hello! ";
@@ -63,6 +69,9 @@ void main(int argc, char ** argv) {
         hello_there, 15, 22,
         substring(hello_there, 15, 22)
     );
+
+    /* =========================== boolean methods ========================== */
+
     const boolean booleans[2] = {TRUE, FALSE};
     for (int i = 0; i < 2; i++) {
         for (int j = 0; j < 2; j++) {
